@@ -1,3 +1,3 @@
 # PEERMotionFormatProcess with Python
-***
-## Tuitions
+## Tutorials
+1. Prepare the component names of each ground motion 
