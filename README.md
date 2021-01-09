@@ -2,7 +2,9 @@
 ## Tutorials     
 ### Preparing: 
 1. save downloaded motions to file-downLoadPeerMotion     
-2. save the names of the files (.AT2) to FileName.txt     
+2. save the names of the files (.AT2) to FileName.txt
+### Process:
+run earthquakeRecordProcess.py
 ### Output: 
 1. Acceleration (g),velcocity(cm/s) and dispplacemnt(cm) of each records in EW, NS and UD directions      
 2. The point number of each record (MotonLength.txt)      
