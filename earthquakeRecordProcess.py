@@ -3,7 +3,7 @@
 #  Author: Junjun Guo
 #  E-mail: guojj@tongji.edu.cn/guojj_ce@163.com
 #    Date: 11/01/2019
-#  Environemet: Successfully excucted in python 2.7
+#  Environemet: Successfully excucted in python 3.8
 # -------------------------------------
 ##########################################################################
 import os
@@ -55,10 +55,12 @@ if __name__=='__main__':
 	#Generating all saving file paths
 	midirList=[(topFile,secFile) for topFile in timeFileDict.values() for secFile in direction]
 	#Clearing existing files
-	[shutil.rmtree(x) for x in timeFileDict.values()]
+	try:
+		[shutil.rmtree(x) for x in timeFileDict.values()]
+	except:
+		pass
 	for toplevel,seclevel in midirList:
 			os.makedirs(toplevel+"/"+seclevel)
-	
 	fileListE=[]
 	fileListN=[]
 	fileListV=[]
@@ -85,8 +87,8 @@ if __name__=='__main__':
 		timeList=[]
 
 		for eachCase in caseList:
-			fileDirection=eachCase[0].values()[0]
-			filePrefix=eachCase[0].keys()[0].strip()
+			fileDirection=list(eachCase[0].values())
+			filePrefix=list(eachCase[0].keys())[0].strip()
 
 			loadFilePath=os.path.join("downLoadPeerMotion/",filePrefix+eachCase[1])
 
@@ -104,7 +106,7 @@ if __name__=='__main__':
 			timeList.append(accDeltaT)
 
 			cwd=os.getcwd()
-			savePathName=os.path.join(cwd,timeFileDict[eachCase[1]]+"/"+fileDirection+"/",filePrefix+".txt")
+			savePathName=os.path.join(cwd,timeFileDict[eachCase[1]]+"/"+fileDirection[0]+"/",filePrefix+".txt")
 			np.savetxt(savePathName,accTimeHistory,fmt="%f")
 		
 		
