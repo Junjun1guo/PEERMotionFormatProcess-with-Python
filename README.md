@@ -1,7 +1,9 @@
-# PEERMotionFormatProcess with Python
+# Processing downloaded PEER ground motions to different tests with one column data
 ## Tutorials
-1. Prepare the component names of each ground motion, please refer to FileName.txt  
-   if the vertical component does not exist, using "NoFile.AT2" replaces its name.
-2. Run earthquakeRecordProcess.py
-3. The formatted acceleartion, velocity and displacement can be seen in the fold.  
-   deltaT.txt and MotonLength.txt are the time interval and motion length for each ground motion, respectively.  
+Preparing: 1. save downloaded motions to file-downLoadPeerMotion
+           2. save the names of the files (.AT2) to FileName.txt
+   Output: 1. Acceleration (g),velcocity(cm/s) and dispplacemnt(cm) of 
+              each records in EW, NS and UD directions
+           2. The point number of each record (MotonLength.txt)
+           3. The time step for each record (deltaT.txt) 
+
